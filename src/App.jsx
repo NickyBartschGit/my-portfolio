@@ -189,12 +189,11 @@ export default function App()
 </p>
 
 <a
-  href="/projects/qa-testing-report.md"
+  href="/qa-testing-report.pdf"
   target="_blank"
-  rel="noreferrer"
-  className="project-link"
+  className="btn secondary"
 >
-  View Test Report
+  View Testing Report
 </a>
 
 </div>
