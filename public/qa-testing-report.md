@@ -1,58 +1,91 @@
 # QA Testing Report – Personal Portfolio Website
 
 ## Overview
-This document summarizes basic manual testing I performed on my personal React portfolio website. The focus was on checking navigation, layout behavior, and general usability across different screen sizes.
+This document summarizes manual QA testing performed on my personal React portfolio website. The focus was on navigation, responsiveness, and usability across desktop and mobile layouts.
 
 ---
 
-## What I Tested
+## Test Environment
+- Browser: Chrome (latest)
+- Device: Desktop + Mobile view (responsive mode)
+- Framework: React (Vite)
+- Deployment: Vercel
 
-### 1. Navigation
-- Checked that navbar links scroll to the correct sections of the page
-- Tested clicking each section multiple times
-- Noticed that without adjustments, some section headings were getting slightly hidden under the sticky navbar
+---
+
+## Test Cases
+
+### TC1 – Navigation Scroll Behavior
+**Steps:**
+- Click navbar links (About, Projects, Contact)
+
+**Expected Result:**
+- Page scrolls to correct section
+- Section heading is fully visible
+
+**Actual Result:**
+- Sections navigated correctly
+- Headings were initially slightly hidden under navbar
+
+**Status:** Fixed
 
 **Fix Applied:**
-- Added scroll-padding-top in CSS to improve section alignment
+- Added `scroll-padding-top` to adjust offset for sticky navbar
 
 ---
 
-### 2. Responsive Layout
-- Tested how the site looks on smaller screens (mobile view)
-- Verified that skill cards stack properly instead of staying in a row
-- Adjusted spacing so content does not feel too cramped on mobile
+### TC2 – Responsive Layout (Mobile)
+**Steps:**
+- Resize screen to mobile width
+- Inspect project and skill sections
+
+**Expected Result:**
+- Cards stack vertically
+- No horizontal overflow
+
+**Actual Result:**
+- Layout adjusted correctly after CSS update
+- Minor spacing issues initially
+
+**Status:** Fixed
 
 ---
 
-### 3. UI Elements
-- Checked buttons in contact section (email button)
-- Verified hover effects work and feel consistent
-- Reviewed spacing between sections to make sure content is readable
+### TC3 – UI Interactions
+**Steps:**
+- Hover over buttons (Email, Resume, Project links)
+
+**Expected Result:**
+- Hover states visible and consistent
+
+**Actual Result:**
+- Hover effects worked as intended
+
+**Status:** Pass
 
 ---
 
-## Issues Found (Simple List)
+## Issues Found
 
-- Section headings partially hidden when navigating with navbar links
-- Grid layout looked too tight on smaller screen sizes
-- Some spacing between sections felt inconsistent at first
+| Issue | Severity | Status |
+|------|----------|--------|
+| Navbar overlap hiding headings | Medium | Fixed |
+| Tight spacing on mobile grid | Low | Fixed |
+| Inconsistent section spacing | Low | Fixed |
 
 ---
 
-## Fixes I Made
-
-- Added `scroll-padding-top` to fix navbar overlap issue
-- Updated grid layout for mobile responsiveness
-- Adjusted spacing between sections and cards for better readability
+## Fixes Applied
+- Added `scroll-padding-top` for navigation alignment
+- Adjusted grid layout for responsive stacking
+- Improved spacing consistency between sections
 
 ---
 
 ## What I Learned
-
-This helped me understand how small CSS and layout issues can affect user experience, especially on mobile devices. It also showed me how important it is to test changes while building instead of only at the end.
+This testing process showed how small layout and CSS issues can significantly impact usability. It reinforced the importance of testing responsiveness and navigation behavior during development, not only after completion.
 
 ---
 
 ## Conclusion
-
-Overall, the site works as expected after small adjustments. The testing was manual and focused on basic usability rather than advanced QA tooling.
+The website is now fully functional with improved navigation behavior and responsive layout. All identified issues were resolved through CSS adjustments and iterative testing.
