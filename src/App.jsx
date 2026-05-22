@@ -73,10 +73,15 @@ export default function App()
             troubleshooting focused.
           </h1>
 
-          <p className="hero-text">
-            Technology professional comfortable working in structured ticketing environments, troubleshooting user/system issues, and documenting resolutions clearly.
-          </p>
+         <p className="hero-text">
+  Technology professional comfortable working in structured ticketing environments, troubleshooting user/system issues, and documenting resolutions clearly.
+</p>
 
+<hr className="hero-divider" />
+
+<p className="hero-text">
+  Completed formal training in Software Development with a focus on QA testing, debugging, and practical IT support workflows.
+</p>
         </section>
 
 

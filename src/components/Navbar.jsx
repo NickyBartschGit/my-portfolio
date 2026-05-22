@@ -3,7 +3,7 @@ export default function Navbar({ activeSection }) {
     <nav className="nav">
 
       <div className="logo">
-        Nicky B
+        Nicky Bartsch
       </div>
 
       <div className="links">
