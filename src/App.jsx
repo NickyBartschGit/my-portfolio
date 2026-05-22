@@ -248,9 +248,14 @@ export default function App()
 
     <div className="contact-buttons">
 
-  <a href="mailto:nicky.bartsch11@gmail.com" className="btn primary">
-    Email Me
-  </a>
+ <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=nicky.bartsch11@gmail.com"
+  target="_blank"
+  rel="noreferrer"
+  className="btn primary"
+>
+  Email Me
+</a>
 
   <a href="/resume.pdf" download className="btn secondary">
     Download Resume
