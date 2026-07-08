@@ -159,7 +159,7 @@ export default function App()
 
   <div className="grid">
 
-    <div className="card">
+    <div className="card project-card">
 
       <h3>Gong Cha Shawnessy – Retail Web Application</h3>
 
@@ -173,35 +173,46 @@ export default function App()
         through iterative testing and feedback.
       </p>
 
-      <a
-  href="https://gongcha-shawnessy.vercel.app/"
-  target="_blank"
-  rel="noreferrer"
-  className="project-link"
->
-  View Project
-</a>
+      <div className="project-links">
+        <a
+          href="https://gongcha-shawnessy.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="project-link"
+        >
+          View Project
+        </a>
+      </div>
 
     </div>
 
-    <div className="card">
 
-  <h3>QA Testing – Personal Portfolio Website</h3>
+    <div className="card project-card">
 
-<p className="muted">
-  Conducted manual UI testing on my portfolio website, identifying and fixing layout
-  and navigation issues across mobile and desktop views.
-</p>
+      <h3>QA Testing – Personal Portfolio Website</h3>
 
-<a
-  href="/qa-testing-report.pdf"
-  target="_blank"
-  className="btn secondary"
->
-  View Testing Report
-</a>
+      <p className="muted">
+        Conducted manual UI testing on my portfolio website, identifying and fixing layout
+        and navigation issues across mobile and desktop views.
+      </p>
 
-</div>
+      <p className="muted">
+        Documented test cases, issues found, fixes applied, and lessons learned through a
+        structured QA testing report.
+      </p>
+
+      <div className="project-links">
+        <a
+          href="/qa-testing-report.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="project-link"
+        >
+          View Testing Report
+        </a>
+      </div>
+
+    </div>
 
   </div>
 
