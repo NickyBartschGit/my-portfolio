@@ -1,292 +1,42 @@
-import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
 
-export default function App() 
-{
+const skills = [
+  ["Support & troubleshooting", "Tier 1 & 2 support, issue triage, root-cause thinking, escalation handling, and end-user service."],
+  ["Systems & data", "Inventory systems, accurate data entry, database fundamentals, data integrity, and workflow monitoring."],
+  ["Documentation & process", "Clear process manuals, onboarding resources, task prioritization, and consistent operational procedures."],
+  ["Quality & delivery", "Manual QA testing, Jira workflows, SDLC fundamentals, defect documentation, and responsive web fundamentals."],
+];
+
+function Arrow() { return <span aria-hidden="true">↗</span>; }
+
+export default function App() {
   const [activeSection, setActiveSection] = useState("about");
-
   useEffect(() => {
-  const sections = document.querySelectorAll("section");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    },
-    {
-      threshold: 0.4
-    }
-  );
-
-  sections.forEach((section) => observer.observe(section));
-
-  return () => observer.disconnect();
-}, []);
-
- useEffect(() => {
-  const elements = document.querySelectorAll(".reveal");
-
-  if (!elements.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  elements.forEach((el) => observer.observe(el));
-
-  return () => observer.disconnect();
-}, []);
-  return (
-
-    
-    <>
-      <Navbar activeSection={activeSection} />
-
-      <div className="hero-bg"></div>
-
-      <main className="container fade-in">
-
-        {/* HERO */}
-        <section id="about" className="section reveal">
-
-          <p className="eyebrow">
-            ENTRY-LEVEL IT & TECHNICAL SUPPORT
-          </p>
-
-          <div className="hire-badge">
-  Available for Entry-Level IT / QA Roles
-</div>
-
-          <h1 className="hero-title">
-            Technical support &
-            <br />
-            troubleshooting focused.
-          </h1>
-
-         <p className="hero-text">
-  Technology professional comfortable working in structured ticketing environments, troubleshooting user/system issues, and documenting resolutions clearly.
-</p>
-
-<hr className="hero-divider" />
-
-<p className="hero-text">
-  Completed formal training in Software Development with a focus on QA testing, debugging, and practical IT support workflows.
-</p>
-        </section>
-
-
-
-        {/* SKILLS */}
-        <section id="skills" className="section reveal">
-
-          <h2>Technical Skills</h2>
-
-          <div className="grid">
-
-            <div className="card">
-              <h3>IT Support</h3>
-              <p className="muted">
-                Tier 1 & 2 troubleshooting, escalation handling,
-                and end-user support.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>QA & Debugging</h3>
-              <p className="muted">
-                Workflow testing, issue tracking,
-                SDLC familiarity, and debugging.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Technical Documentation</h3>
-              <p className="muted">
-                Process documentation, onboarding,
-                operational procedures, and organization.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Web Fundamentals</h3>
-              <p className="muted">
-                React fundamentals, responsive layouts,
-                and component-based UI structure.
-              </p>
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* TOOLS */}
-<section className="section reveal">
-
-  <h2>Tools & Technologies</h2>
-
-  <div className="tech-stack">
-
-    <div className="tech-pill">Windows</div>
-    <div className="tech-pill">Jira</div>
-    <div className="tech-pill">React</div>
-    <div className="tech-pill">JavaScript</div>
-    <div className="tech-pill">Git</div>
-    <div className="tech-pill">HTML/CSS</div>
-    <div className="tech-pill">SDLC</div>
-    <div className="tech-pill">Technical Documentation</div>
-    <div className="tech-pill">Troubleshooting</div>
-    <div className="tech-pill">Inventory Systems</div>
-    <div className="tech-pill">UI/UX Fundamentals</div>
-
-  </div>
-
-</section>
-
-{/* PROJECTS */}
-<section id="projects" className="section reveal">
-
-  <h2>Projects</h2>
-
-  <div className="grid">
-
-    <div className="card project-card">
-
-      <h3>Gong Cha Shawnessy – Retail Web Application</h3>
-
-      <p className="muted">
-        Built a React-based retail web application as part of a team project during my
-        Software Development Certificate program at SAIT.
-      </p>
-
-      <p className="muted">
-        Contributed to UI layout, dynamic menu structure, and improving overall user experience
-        through iterative testing and feedback.
-      </p>
-
-      <div className="project-links">
-        <a
-          href="https://gongcha-shawnessy.vercel.app/"
-          target="_blank"
-          rel="noreferrer"
-          className="project-link"
-        >
-          View Project
-        </a>
-      </div>
-
-    </div>
-
-
-    <div className="card project-card">
-
-      <h3>QA Testing – Personal Portfolio Website</h3>
-
-      <p className="muted">
-        Conducted manual UI testing on my portfolio website, identifying and fixing layout
-        and navigation issues across mobile and desktop views.
-      </p>
-
-      <p className="muted">
-        Documented test cases, issues found, fixes applied, and lessons learned through a
-        structured QA testing report.
-      </p>
-
-      <div className="project-links">
-        <a
-          href="/qa-testing-report.pdf"
-          target="_blank"
-          rel="noreferrer"
-          className="project-link"
-        >
-          View Testing Report
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-        {/* EXPERIENCE */}
-        <section id="experience" className="section reveal">
-
-          <h2>Experience</h2>
-
-          <div className="card">
-
-            <h3>Calgary Coop — Bakery Supervisor</h3>
-
-            <ul className="muted">
-              <li>Resolved operational and workflow issues in fast-paced environments</li>
-              <li>Created structured documentation and onboarding guides</li>
-              <li>Maintained inventory tracking systems and data accuracy</li>
-              <li>Acted as escalation point for workflow disruptions</li>
-              <li>Prioritized and triaged daily operational issues</li>
-            </ul>
-
-          </div>
-
-        </section>
-
-        {/* CERTIFICATIONS */}
-        <section id="certifications" className="section reveal">
-
-          <h2>Certifications</h2>
-
-          <div className="card">
-            <h3>CompTIA A+</h3>
-
-            <p className="muted">
-              Currently in progress — Core 1 & Core 2
-            </p>
-          </div>
-
-        </section>
-
-    {/* CONTACT */}
-<section id="contact" className="section reveal">
-
-  <h2>Contact</h2>
-
-  <div className="card">
-
-    <div className="contact-buttons">
-
- <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=nicky.bartsch11@gmail.com"
-  target="_blank"
-  rel="noreferrer"
-  className="btn primary"
->
-  Email Me
-</a>
-
-  <a href="/resume.pdf" download className="btn secondary">
-    Download Resume
-  </a>
-
-</div>
-
-    <p className="muted" style={{ marginTop: "16px" }}>
-      Based in Calgary, Alberta
-    </p>
-
-  </div>
-
-</section>
-
-      </main>
-    </>
-  );
+    const sections = document.querySelectorAll("main section[id]");
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)), { rootMargin: "-35% 0px -55% 0px" });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  return <>
+    <Navbar activeSection={activeSection} />
+    <main>
+      <section id="about" className="hero section-shell">
+        <div className="hero-copy">
+          <p className="kicker"><span /> IT SUPPORT &amp; OPERATIONS</p>
+          <h1>Reliable support.<br /><em>Clearer systems.</em></h1>
+          <p className="hero-lede">I’m Nicky Bartsch, an entry-level technology professional who brings seven years of calm problem-solving, team leadership, and process discipline to IT support and analyst teams.</p>
+          <div className="hero-actions"><a className="button button-primary" href="#contact">Let’s connect <Arrow /></a><a className="text-link" href="/resume.pdf" download>Download résumé <Arrow /></a></div>
+        </div>
+        <aside className="availability-card" aria-label="Career focus"><p className="card-label">CURRENTLY PURSUING</p><h2>CompTIA A+</h2><p>Core 1 &amp; Core 2 · expected October 2026</p><div className="card-rule" /><p className="card-label">OPEN TO</p><ul><li>IT Support &amp; Help Desk</li><li>Operations &amp; Reporting Analyst</li><li>Junior Systems Support</li></ul></aside>
+      </section>
+      <section className="proof-strip" aria-label="Professional summary"><div><strong>7+</strong><span>years in high-volume operations</span></div><div><strong>Tier 1–2</strong><span>support &amp; escalation mindset</span></div><div><strong>Calgary</strong><span>Alberta · open to opportunities</span></div></section>
+      <section id="skills" className="section-shell content-section"><div className="section-intro"><p className="kicker">WHAT I BRING</p><h2>Practical skills that keep work moving.</h2></div><div className="skills-grid">{skills.map(([title, description], index) => <article className="skill-card" key={title}><span className="skill-number">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></section>
+      <section id="experience" className="section-shell content-section experience-section"><div className="section-intro"><p className="kicker">EXPERIENCE</p><h2>Operations experience with a technical point of view.</h2></div><div className="timeline"><article className="timeline-item"><div className="timeline-meta"><span>2024 — Current</span><span>Calgary, AB</span></div><div><p className="role-company">Calgary Co-op</p><h3>Bakery Supervisor</h3><ul><li>Served as the escalation point for complex operational issues, applying structured troubleshooting to maintain continuous service.</li><li>Created and maintained process manuals and training documentation used for staff onboarding and consistent execution.</li><li>Prioritized daily work, surfaced systemic blockers to management, and coordinated teams in a high-volume environment.</li></ul></div></article><article className="timeline-item"><div className="timeline-meta"><span>2017 — 2024</span><span>Calgary, AB</span></div><div><p className="role-company">Calgary Co-op</p><h3>Bakery Utility Clerk</h3><ul><li>Maintained inventory records with accurate data entry and rotation practices to prevent resource shortages.</li><li>Resolved customer inquiries with an end-user mindset while following strict safety and compliance standards.</li></ul></div></article></div></section>
+      <section id="projects" className="section-shell content-section projects-section"><div className="section-intro"><p className="kicker">TRAINING &amp; PROJECT WORK</p><h2>Learning applied to real deliverables.</h2></div><div className="project-grid"><article className="project-card featured-project"><p className="card-label">TEAM PROJECT · SAIT</p><h3>Gong Cha Shawnessy<br />Retail Web Application</h3><p>Collaborated on a responsive retail web application, contributing to dynamic menus, user parameters, and UI/UX improvements. Used Jira to track work, document issues, and resolve bugs within an SDLC-based team workflow.</p><div className="tag-list"><span>Jira</span><span>Manual Testing</span><span>UI/UX</span><span>React Fundamentals</span></div><a className="text-link" href="https://gongcha-shawnessy.vercel.app/" target="_blank" rel="noreferrer">View project <Arrow /></a></article><article className="project-card"><p className="card-label">QUALITY ASSURANCE</p><h3>Portfolio QA<br />Testing Report</h3><p>Performed structured manual UI testing across mobile and desktop layouts. Documented test cases, findings, corrections, and lessons learned in a formal QA report.</p><div className="tag-list"><span>QA Testing</span><span>Defect Tracking</span><span>Documentation</span></div><a className="text-link" href="/qa-testing-report.pdf" target="_blank" rel="noreferrer">Read testing report <Arrow /></a></article><article className="project-card support-lab-card"><p className="card-label">HANDS-ON IT SUPPORT LAB</p><h3>IT Help Desk<br />Troubleshooting Lab</h3><p>Built a simulated IT support environment for a 20-employee business. Documented 15 support tickets, Windows and network troubleshooting workflows, a PowerShell diagnostic script, and a ticket-analysis dashboard.</p><div className="tag-list"><span>Windows Support</span><span>Ticket Documentation</span><span>PowerShell</span><span>Data Analysis</span></div><a className="text-link" href="https://github.com/NickyBartschGit/it-help-desk-troubleshooting-lab" target="_blank" rel="noreferrer">Explore lab on GitHub <Arrow /></a></article></div></section>
+      <section id="contact" className="contact-section"><div className="section-shell contact-inner"><p className="kicker">GET IN TOUCH</p><h2>Let’s talk about how I can support your team.</h2><p>I’m seeking an entry-level IT support, systems support, or operations/analyst role where thoughtful troubleshooting and reliable follow-through matter.</p><div className="contact-actions"><a className="button button-primary" href="mailto:nicky.bartsch11@gmail.com">Email Nicky <Arrow /></a><a className="button button-secondary" href="tel:+15879994796" aria-label="Call Nicky">Call Nicky <Arrow /></a></div></div></section>
+    </main>
+    <footer className="section-shell"><span>© {new Date().getFullYear()} Nicky Bartsch</span><span>IT Support &amp; Operations</span></footer>
+  </>;
 }

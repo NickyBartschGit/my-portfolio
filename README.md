@@ -1,16 +1,22 @@
-# React + Vite
+# Nicky Bartsch — IT Support & Operations Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A recruiter-focused portfolio for entry-level IT support, junior systems support, and operations or reporting analyst opportunities.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Install [Node.js](https://nodejs.org/) 20 or newer.
+2. In this folder, run `npm install`.
+3. Run `npm run dev` and open the local address Vite provides.
 
-## React Compiler
+## Production build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Run `npm run build`. Upload the generated `dist` folder to a static host such as Vercel, Netlify, or GitHub Pages.
 
-## Expanding the ESLint configuration
+## Content to update
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Primary site copy is in `src/App.jsx`.
+- Navigation is in `src/components/Navbar.jsx`.
+- Site styling is in `src/styles.css`.
+- The downloadable résumé and QA report are in `public/`.
+
+Before publishing, update the CompTIA A+ expected completion date once it changes and replace `public/resume.pdf` whenever a new résumé version is ready.
