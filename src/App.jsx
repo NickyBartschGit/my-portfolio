@@ -36,7 +36,7 @@ export default function App() {
       <section id="about" className="hero section-shell">
         <div className="hero-copy">
           <p className="kicker"><span /> IT SUPPORT &amp; OPERATIONS</p>
-          <h1>Reliable support.<br /><em>Clearer systems.</em></h1>
+          <h1>I’m moving from operations into IT,<br /><em>with seven years of problem-solving experience behind me.</em></h1>
           <p className="hero-lede">I’m Nicky Bartsch, an entry-level technology professional who brings seven years of calm problem-solving, team leadership, and process discipline to IT support and analyst teams.</p>
           <div className="hero-actions"><a className="button button-primary" href="#contact">Let’s connect <Arrow /></a><a className="text-link" href="/resume.pdf" download>Download résumé <Arrow /></a></div>
         </div>
