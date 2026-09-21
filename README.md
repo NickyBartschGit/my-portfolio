@@ -19,4 +19,3 @@ Run `npm run build`. Upload the generated `dist` folder to a static host such as
 - Site styling is in `src/styles.css`.
 - The downloadable résumé and QA report are in `public/`.
 
-Before publishing, update the CompTIA A+ expected completion date once it changes and replace `public/resume.pdf` whenever a new résumé version is ready.
