@@ -1,15 +1,4 @@
 .support-lab-card {
-  grid-column: 1 / -1;
-  min-height: 300px;
   background: #e6f1eb;
   border-color: #b9d5c8;
-}
-
-.support-lab-card h3 {
-  font-size: clamp(30px, 4vw, 46px);
-}
-
-.support-lab-card p {
-  max-width: 660px;
-  font-size: 15px;
 }
